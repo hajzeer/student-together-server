@@ -26,3 +26,21 @@ main tasks:
 
 #### Data Base
 * MongoDB
+
+## TODO List
+### Frontend
+- [ ] Set Design
+- [ ] Pages
+- [ ] Main page
+- [ ] Register and login page
+- [ ] User page
+- [ ] Search bar
+- [ ] Create postsModel
+- [ ] Edit postsModel
+
+
+### Backend
+- [x] Post model
+- [x] Post Controllers
+- [x] Post Routes
+- [ ] Login and register
