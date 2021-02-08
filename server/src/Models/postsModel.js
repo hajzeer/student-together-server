@@ -8,11 +8,12 @@ const postSchema = new Schema({
     categories: {type: String, require: true},
     description: {type: String, maxlength: 1000},
     creator: {type: String, require: true},
-    selectedFiles: {type: String,},
+    selectedFiles: {type: [String],},
     createdAt: {type: Date, default: new Date()}
 
 }, {
-    timestamps: true
+    timestamps: true,
+    collection: 'posts'
 });
 
 const postsModel = mongoose.model('postsModel', postSchema);
