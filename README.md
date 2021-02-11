@@ -43,4 +43,4 @@ main tasks:
 - [x] Post model
 - [x] Post Controllers
 - [x] Post Routes
-- [ ] Login and register
+- [x] Login and register
