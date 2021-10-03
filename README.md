@@ -44,3 +44,35 @@ main tasks:
 - [x] Post Controllers
 - [x] Post Routes
 - [x] Login and register
+
+### In DataBase information
+- [ ] Name
+- [ ] LastName
+- [ ] University
+- [ ] Speciality
+- [ ] About me
+- [ ] Your city
+- [ ] Profile picture
+
+### In Post
+- [ ] Comments (list)
+- [ ] University
+- [ ] #System
+
+### Event System
+- [ ] Name
+- [ ] Date
+- [ ] Creator
+- [ ] Place
+- [ ] Description
+- [ ] Posts
+- [ ] Admin
+
+### Groups
+- [ ] Name
+- [ ] Admin
+- [ ] Users
+- [ ] Posts
+
+
+
