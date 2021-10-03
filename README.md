@@ -74,5 +74,6 @@ main tasks:
 - [ ] Users
 - [ ] Posts
 
-
+### Globals
+- Name and passwords cant have special keys
 
