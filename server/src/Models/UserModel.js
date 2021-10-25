@@ -33,6 +33,15 @@ const userSchema = new Schema(
       require: true,
       maxlength: 40,
     },
+    degreeOfStudy: {
+      type: String,
+      require: true,
+    },
+    term: {
+      type: Number,
+      require: true,
+      maxlength: 1,
+    },
     city: {
       type: String,
       maxlength: 40,

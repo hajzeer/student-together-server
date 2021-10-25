@@ -15,10 +15,18 @@ exports.signup = (req, res) => {
     password_confirmation,
     university,
     speciality,
+    term,
+    degreeOfStudy,
     city,
     description,
     selectedFiles,
   } = req.body;
+  const degree = [
+    "licencjackie",
+    "inżynierskie",
+    "magisterskie",
+    "doktoranckie",
+  ];
   const errors = [];
   if (!name) {
     errors.push({ name: "required" });
@@ -32,6 +40,29 @@ exports.signup = (req, res) => {
   if (!speciality) {
     errors.push({ speciality: "required" });
   }
+  if (!degreeOfStudy) {
+    errors.push({ degreeOfStudy: "required" });
+  }
+  if (degree.indexOf(degreeOfStudy) === -1) {
+    errors.push({
+      degreeOfStudy:
+        "you need to choose between licencjackie, " +
+        "inżynierskie, magisterskie or doktoranckie ",
+    });
+  }
+  if (!term) {
+    errors.push({ term: "required" });
+  }
+  if (degreeOfStudy === "licencjackie" && term > 6) {
+    errors.push({ term: "this cannot be bigger than 6" });
+  }
+  if (degreeOfStudy === "inżynierskie" && term > 7) {
+    errors.push({ term: "this cannot be bigger than 7" });
+  }
+  if (degreeOfStudy === "magisterskie" && term > 4) {
+    errors.push({ term: "this cannot be bigger than 4" });
+  }
+
   if (!email) {
     errors.push({ email: "required" });
   }
@@ -66,6 +97,8 @@ exports.signup = (req, res) => {
           password: password,
           university: university,
           speciality: speciality,
+          degreeOfStudy: degreeOfStudy,
+          term: term,
           city: city,
           description: description,
           selectedFiles: selectedFiles,
