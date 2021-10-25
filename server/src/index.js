@@ -1,35 +1,41 @@
+/** @format */
 
-const express = require('express');
-const cors = require('cors');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
+const express = require("express");
+const cors = require("cors");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 
-const postsRouter = require('./Routes/postsRouter.js');
-const authRouter = require('./Routes/authRouter.js');
+const postsRouter = require("./Routes/postsRouter.js");
+const authRouter = require("./Routes/authRouter.js");
 
-require('dotenv').config({path: './../.env'});
+require("dotenv").config({ path: "./../.env" });
 
 const uri = process.env.ATLAS_URI;
 
-mongoose.connect(uri, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true})
-    .then(() => console.log('MongoDB connection successfully'))
-    .catch((error) => console.error(error));
+mongoose
+  .connect(uri, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("MongoDB connection successfully"))
+  .catch((error) => console.error(error));
 
 const port = process.env.PORT || 5000;
 
 const app = express();
 
 app.use(cors());
-app.use(bodyParser.json({limit: '30mb', extended: true}));
-app.use(bodyParser.urlencoded({limit: '30mb', extended: true}));
+app.use(bodyParser.json({ limit: "30mb", extended: true }));
+app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
-app.use('/api/posts', postsRouter);
-app.use('/api/user', authRouter);
+app.use("/api/posts", postsRouter);
+app.use("/api/user", authRouter);
 
 app.use((req, res, next) => {
-    res.send('student together backend');
+  res.send("student together backend");
 });
 
 app.listen(port, () => {
-    console.log(`Server is running on port: ${port}`);
+  console.log(`Server is running on port: ${port}`);
 });

@@ -1,9 +1,11 @@
-const postsModel =  require('./../Models/postsModel');
+/** @format */
 
- const getPosts = async (req, res, next) => {
+const postsModel = require("./../Models/postsModel");
 
-        postsModel.find()
-            .then(posts => res.status(200).json(posts))
-            .catch(err => res.status(404).json({message: err.message}));
-}
+const getPosts = async (req, res, next) => {
+  postsModel
+    .find()
+    .then((posts) => res.status(200).json(posts))
+    .catch((err) => res.status(404).json({ message: err.message }));
+};
 module.exports = getPosts;
