@@ -5,7 +5,12 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
   {
-    name: {
+    userName: {
+      type: String,
+      required: true,
+      maxlength: 20,
+    },
+    firstName: {
       type: String,
       required: true,
       maxlength: 20,

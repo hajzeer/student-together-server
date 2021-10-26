@@ -3,18 +3,22 @@
 const postsModel = require("../Models/postsModel.js");
 
 const createPosts = async (req, res) => {
-  const title = req.body.title;
-  const categories = req.body.categories;
-  const description = req.body.description;
-  const creator = req.body.creator;
-  const selectedFiles = req.body.selectedFiles;
-
-  const newPost = new postsModel({
+  const {
     title,
     categories,
     description,
-    creator,
+    userId,
+    universityOfCreator,
     selectedFiles,
+  } = req.body;
+
+  const newPost = new postsModel({
+    title: title,
+    categories: categories,
+    description: description,
+    userId: userId,
+    universityOfCreator: universityOfCreator,
+    selectedFiles: selectedFiles,
   });
 
   await newPost

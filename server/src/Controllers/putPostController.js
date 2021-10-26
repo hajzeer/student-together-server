@@ -7,7 +7,7 @@ const putPosts = (req, res) => {
     post.title = req.body.title;
     post.categories = req.body.categories;
     post.description = req.body.description;
-    post.creator = req.body.creator;
+    post.userId = req.body.userId;
     post.selectedFiles = req.body.selectedFiles;
 
     post

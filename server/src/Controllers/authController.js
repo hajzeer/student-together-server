@@ -8,7 +8,8 @@ const emailRegexp =
   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 exports.signup = (req, res) => {
   const {
-    name,
+    userName,
+    firstName,
     lastName,
     email,
     password,
@@ -28,8 +29,11 @@ exports.signup = (req, res) => {
     "doktoranckie",
   ];
   const errors = [];
-  if (!name) {
-    errors.push({ name: "required" });
+  if (!userName) {
+    errors.push({ userName: "required" });
+  }
+  if (!firstName) {
+    errors.push({ firstName: "required" });
   }
   if (!lastName) {
     errors.push({ lastName: "required" });
@@ -91,7 +95,8 @@ exports.signup = (req, res) => {
           .json({ errors: [{ user: "email already exists" }] });
       } else {
         const user = new User({
-          name: name,
+          userName: userName,
+          firstName: firstName,
           lastName: lastName,
           email: email,
           password: password,
