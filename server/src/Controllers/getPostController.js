@@ -22,7 +22,7 @@ const getOnePost = async (req, res, next) => {
 //get user's all posts
 const getPostsByUser = async (req, res, next) => {
   try {
-    const user = await userModel.findOne({ username: req.params.userName });
+    const user = await userModel.findOne({ username: req.params.username });
     const posts = await postsModel.find({ userId: user._id });
     res.status(200).json(posts);
   } catch (err) {

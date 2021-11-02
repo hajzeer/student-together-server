@@ -69,7 +69,7 @@ main tasks:
 
 - [ ] Comments (list)
 - [x] University
-- [ ] #System
+- [ ] Hashtags System
 
 ### Event System
 
