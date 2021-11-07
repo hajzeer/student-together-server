@@ -9,6 +9,8 @@ const {
 const createPosts = require("../Controllers/createPostController.js");
 const deletePosts = require("../Controllers/deletePostController.js");
 const putPosts = require("../Controllers/putPostController.js");
+const createComment = require("../Controllers/createCommentsController.js");
+const getComment = require("../Controllers/getCommentsController.js");
 
 const router = express.Router();
 
@@ -27,5 +29,11 @@ router.delete("/:id", deletePosts);
 
 // update post
 router.put("/:id", putPosts);
+
+//create comments
+router.post("/comments/:id", createComment);
+
+//get comments
+router.get("/comments/:id", getComment);
 
 module.exports = router;
