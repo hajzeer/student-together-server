@@ -10,7 +10,8 @@ const postSchema = new Schema(
     userId: { type: String, require: true },
     universityOfCreator: { type: String, require: true },
     selectedFiles: { type: [String] },
-    createdAt: { type: Date, default: new Date() },
+    hashtags: { type: [String] },
+    createdAt: { type: Date, default: Date.now },
   },
   {
     timestamps: true,

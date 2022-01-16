@@ -24,7 +24,14 @@ const port = process.env.PORT || 5000;
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://192.168.0.143:3000",
+    methods: ["GET", "POST", "PUT", "DELETE", "UPDATE"],
+    credentials: true,
+  })
+);
+
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 

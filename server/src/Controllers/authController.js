@@ -148,24 +148,26 @@ exports.signin = (req, res) => {
               return res
                 .status(400)
                 .json({ errors: [{ password: "incorrect" }] });
+            } else {
+              return res.status(200).json({ message: user });
             }
-            const access_token = createJWT(user.email, user._id, 3600);
-            jwt.verify(
-              access_token,
-              process.env.TOKEN_SECRET,
-              (err, decoded) => {
-                if (err) {
-                  res.status(500).json({ errors: err });
-                }
-                if (decoded) {
-                  return res.status(200).json({
-                    success: true,
-                    token: access_token,
-                    message: user,
-                  });
-                }
-              }
-            );
+            //    const access_token = createJWT(user.email, user._id, 3600);
+            //    jwt.verify(
+            //      access_token,
+            //      process.env.TOKEN_SECRET,
+            //      (err, decoded) => {
+            //        if (err) {
+            //          res.status(500).json({ errors: err });
+            //        }
+            //        if (decoded) {
+            //          return res.status(200).json({
+            //            success: true,
+            //            token: access_token,
+            //            message: user,
+            //          });
+            //        }
+            //      }
+            //    );
           })
           .catch((err) => {
             res.status(500).json({ errors: err });
