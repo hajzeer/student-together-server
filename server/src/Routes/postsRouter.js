@@ -24,10 +24,10 @@ router.get("/profile/:username", getPostsByUser);
 // post posts
 router.post("/", createPosts);
 
-// delete post
+// delete posts
 router.delete("/:id", deletePosts);
 
-// update post
+// update posts
 router.put("/:id", putPosts);
 
 //create comments
