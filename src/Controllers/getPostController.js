@@ -1,6 +1,6 @@
 /** @format */
 
-const userModel = require("./models/UserModel.js");
+const userModel = require("./Models/UserModel.js");
 const postsModel = require("./Models/postsModel.js");
 
 //get All posts
