@@ -24,7 +24,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://192.168.0.143:3000",
+    origin: "https://student-together-client.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE", "UPDATE"],
     credentials: true,
   })
