@@ -20,8 +20,6 @@ mongoose
   .then(() => console.log("MongoDB connection successfully"))
   .catch((error) => console.error(error));
 
-const port = process.env.PORT || 5000;
-
 const app = express();
 
 app.use(
@@ -42,6 +40,4 @@ app.use((req, res, next) => {
   res.send("student together backend");
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port: ${port}`);
-});
+app.listen(process.env.PORT || 5000);
