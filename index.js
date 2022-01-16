@@ -8,7 +8,7 @@ const bodyParser = require("body-parser");
 const postsRouter = require("./src/Routes/postsRouter.js");
 const authRouter = require("./src/Routes/authRouter.js");
 
-require("dotenv").config({ path: "./../.env" });
+require("dotenv").config({ path: "./.env" });
 
 const uri = process.env.ATLAS_URI;
 
