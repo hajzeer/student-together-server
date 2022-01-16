@@ -5,8 +5,8 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
-const postsRouter = require("./Routes/postsRouter.js");
-const authRouter = require("./Routes/authRouter.js");
+const postsRouter = require("./src/Routes/postsRouter.js");
+const authRouter = require("./src/Routes/authRouter.js");
 
 require("dotenv").config({ path: "./../.env" });
 
