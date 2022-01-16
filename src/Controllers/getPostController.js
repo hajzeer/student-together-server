@@ -1,7 +1,7 @@
 /** @format */
 
-const userModel = require("./Models/UserModel.js");
-const postsModel = require("./Models/postsModel.js");
+const userModel = require("../Models/UserModel.js");
+const postsModel = require("../Models/postsModel.js");
 
 //get All posts
 const getPosts = async (req, res, next) => {

@@ -1,6 +1,6 @@
 /** @format */
 
-const User = require("../models/UserModel.js");
+const User = require("../Models/UserModel.js");
 
 const getUserById = async (req, res, next) => {
   User.findById(req.params.id)
