@@ -2,8 +2,8 @@
 
 const User = require("../Models/UserModel.js");
 
-const getUserById = async (req, res, next) => {
-  User.findById(req.params.id)
+const getUserByUsername = async (req, res, next) => {
+  User.findOne({ username: req.params.username })
     .then((post) => res.status(200).json(post))
     .catch((err) => res.status(404).json({ message: err.message }));
 };
@@ -13,4 +13,4 @@ const getUser = async (req, res, next) => {
     .catch((err) => res.status(404).json({ message: err.message }));
 };
 
-module.exports = { getUser, getUserById };
+module.exports = { getUser, getUserByUsername };

@@ -4,7 +4,10 @@ const express = require("express");
 const router = express.Router();
 
 const { signin, signup } = require("../Controllers/authController.js");
-const { getUser, getUserById } = require("../Controllers/getUserController.js");
+const {
+  getUser,
+  getUserByUsername,
+} = require("../Controllers/getUserController.js");
 
 // sign in user
 router.post("/signin", signin);
@@ -13,7 +16,7 @@ router.post("/signin", signin);
 router.post("/signup", signup);
 
 //get user
-router.get("/profile/:id", getUserById);
+router.get("/profile/:username", getUserByUsername);
 
 // get all users
 router.get("/profile/", getUser);
