@@ -13,4 +13,18 @@ const getUser = async (req, res, next) => {
     .catch((err) => res.status(404).json({ message: err.message }));
 };
 
-module.exports = { getUser, getUserByUsername };
+const patchUser = async (req, res, next) => {
+  try {
+    const updateDesc = await User.findOneAndUpdate(
+      { username: req.params.username },
+      {
+        description: req.body.description,
+      }
+    );
+    res.send(updateDesc);
+  } catch (err) {
+    res.status(409).send(err.message);
+  }
+};
+
+module.exports = { getUser, getUserByUsername, patchUser };

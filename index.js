@@ -25,7 +25,7 @@ const app = express();
 app.use(
   cors({
     origin: "https://student-together-client.vercel.app",
-    methods: ["GET", "POST", "PUT", "DELETE", "UPDATE"],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     credentials: true,
   })
 );

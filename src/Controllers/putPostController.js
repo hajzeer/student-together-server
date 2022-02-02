@@ -17,4 +17,15 @@ const putPosts = (req, res) => {
   });
 };
 
-module.exports = putPosts;
+const patchPost = async (req, res, next) => {
+  try {
+    const updateDesc = await postsModel.findByIdAndUpdate(req.params.id, {
+      description: req.body.description,
+    });
+    res.send(updateDesc);
+  } catch (err) {
+    res.status(409).send(err.message);
+  }
+};
+
+module.exports = { putPosts, patchPost };

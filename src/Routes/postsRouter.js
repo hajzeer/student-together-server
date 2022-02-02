@@ -8,7 +8,7 @@ const {
 } = require("../Controllers/getPostController.js");
 const createPosts = require("../Controllers/createPostController.js");
 const deletePosts = require("../Controllers/deletePostController.js");
-const putPosts = require("../Controllers/putPostController.js");
+const { putPosts, patchPost } = require("../Controllers/putPostController.js");
 const createComment = require("../Controllers/createCommentsController.js");
 const getComment = require("../Controllers/getCommentsController.js");
 
@@ -29,6 +29,9 @@ router.delete("/:id", deletePosts);
 
 // update posts
 router.put("/:id", putPosts);
+
+//patch description
+router.patch("/:id", patchPost);
 
 //create comments
 router.post("/comments/:id", createComment);
